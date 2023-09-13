@@ -15,10 +15,10 @@ import sharp from "sharp";
  */
 const dirName = path.dirname(process.argv[2]);
 const fileName = path.basename(process.argv[2]);
-const outputDir = `dest${dirName.replace("src", "")}`;
+const outputDir = `dist${dirName.replace("src", "")}`;
 const outputPathFilename = `${outputDir}/${fileName.replace(
   /\.[^/.]+$/,
-  ".webp"
+  ".webp",
 )}`;
 
 // 拡張子を取得
@@ -36,7 +36,7 @@ const fileFormat = getExtension(fileName);
     return;
   }
 
-  // destにディレクトリがなければ作成
+  // distにディレクトリがなければ作成
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
@@ -48,7 +48,7 @@ const fileFormat = getExtension(fileName);
     .then((info) => {
       // 成功：ファイル名とサイズを表示
       console.log(
-        `\u001b[1;32m ${outputPathFilename} created. (${info.size / 1000}KB)`
+        `\u001b[1;32m ${outputPathFilename} created. (${info.size / 1000}KB)`,
       );
     })
     .catch((err) => {

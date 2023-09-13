@@ -1,0 +1,14 @@
+{
+  "name": "convert-webp",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "webp:all": "node convert-webp-all.mjs",
+    "webp:watch": "onchange 'src/assets/images/**/*.{jpg,jpeg,png}' -- node convert-webp-watch.mjs {{changed}}"
+  },
+  "dependencies": {
+    "glob": "^10.3.4",
+    "onchange": "^7.1.0",
+    "sharp": "^0.32.5"
+  }
+}

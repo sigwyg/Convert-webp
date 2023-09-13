@@ -38,15 +38,15 @@ images.map((image, index) => {
     return;
   }
 
-  // destにサブディレクトリがなければ作成
-  const outputSubDir = `dest${pathName.replace("src", "")}`;
+  // distにサブディレクトリがなければ作成
+  const outputSubDir = `dist${pathName.replace("src", "")}`;
   if (!fs.existsSync(outputSubDir)) {
     fs.mkdirSync(outputSubDir, { recursive: true });
   }
 
   const outputPathFilename = `${outputSubDir}/${fileName.replace(
     /\.[^/.]+$/,
-    ".webp"
+    ".webp",
   )}`;
 
   // sharp で変換
@@ -56,9 +56,8 @@ images.map((image, index) => {
     .then((info) => {
       // 成功：ファイル名とサイズを表示
       console.log(
-        `\u001b[1;32m ${index + 1}: ${outputPathFilename} (${
-          info.size / 1000
-        }KB)`
+        `\u001b[1;32m ${index + 1}: ${outputPathFilename} (${info.size / 1000
+        }KB)`,
       );
     })
     .catch((err) => {
