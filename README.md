@@ -1,7 +1,7 @@
 # Convert-webp
 
 拡張子がjpg/jpeg/pngなファイルをwebpに変換するツール。  
-[sharp](https://github.com/lovell/sharp)を使ってます。
+[sharp](https://github.com/lovell/sharp)を使ってます。コードサンプルとして利用。
 
 ## Required
 
