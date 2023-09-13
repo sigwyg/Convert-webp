@@ -10,7 +10,7 @@ Top-Level AwaitがNode.js v14.8.0からなので、コード的にはその辺�
 
 ## Usage
 
-```
+```shell
 # src/assets/images/*を監視
 $ npm run webp:watch
 
